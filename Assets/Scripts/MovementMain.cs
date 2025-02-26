@@ -2,30 +2,42 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 8f;
     public float jumpForce = 5f;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     private bool isGrounded;
+    float horizontalMove = 0;
+    float verticalMove = 0;
+    
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        Move();
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.D))
         {
-            Jump();
+            horizontalMove += moveSpeed * Time.deltaTime;
         }
-    }
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontalMove -= moveSpeed * Time.deltaTime;
+        }
 
-    void Move()
-    {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-        rb.velocity = new Vector2(moveX * moveSpeed, moveY * moveSpeed);
+        // Vertical movement (left/right with 'A'/'D')
+        if (Input.GetKey(KeyCode.W))
+        {
+            verticalMove += moveSpeed * Time.deltaTime;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            verticalMove -= moveSpeed * Time.deltaTime;
+        }
+
+        // Move the object by changing the position directly
+        transform.position = new Vector3(horizontalMove, transform.position.y, verticalMove);
     }
 
     void Jump()
