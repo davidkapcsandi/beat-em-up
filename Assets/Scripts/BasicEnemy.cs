@@ -39,7 +39,7 @@ public class BasicEnemy : MonoBehaviour
                 if (currIndex >= waypoints.Length)
                     currIndex = 0;
 
-                //                agent.SetDestination(waypoints[currIndex].position);
+//                agent.SetDestination(waypoints[currIndex].position);
             }
         }
     }
