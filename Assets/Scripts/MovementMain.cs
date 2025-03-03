@@ -7,10 +7,11 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionY;
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     void Update()
