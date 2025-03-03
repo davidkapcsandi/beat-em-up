@@ -11,11 +11,9 @@ public enum BotState
 public class BasicEnemy : MonoBehaviour
 {
     public UnityEvent<BotState> StateChanged;
-
-
     public NavMeshAgent agent;
     public Transform[] waypoints;
-
+    private Transform player; 
     private int currIndex = -1;
     private BotState botState = BotState.Patrol;
 
@@ -23,45 +21,57 @@ public class BasicEnemy : MonoBehaviour
     {
         StateChanged?.Invoke(botState);
     }
+
     private void Update()
     {
-        // 1. does my agent have destination
-        // 2. has my agent reached a destination?
-
-
-        //
         if (botState == BotState.Patrol)
         {
-            if (!agent.hasPath || agent.remainingDistance <= 0.5f)
-            {
-                currIndex++;
-
-                if (currIndex >= waypoints.Length)
-                    currIndex = 0;
-
-                //                agent.SetDestination(waypoints[currIndex].position);
-            }
+            Patrol();
+        }
+        else if (botState == BotState.Chase && player != null)
+        {
+            ChasePlayer();
         }
     }
+
+    private void Patrol()
+    {
+        if (!agent.hasPath || agent.remainingDistance <= 0.1f)
+        {
+            currIndex++;
+            if (currIndex >= waypoints.Length)
+                currIndex = 0;
+
+            agent.SetDestination(waypoints[currIndex].position);
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        if (player != null)
+        {
+            agent.SetDestination(player.position);  // Always update the target position
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
+            player = other.transform;
             botState = BotState.Chase;
-            agent.SetDestination(other.transform.position);
             StateChanged?.Invoke(botState);
-
         }
-
     }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
             botState = BotState.Patrol;
             agent.ResetPath();
             StateChanged?.Invoke(botState);
+            player = null;
         }
     }
-
 }
