@@ -6,6 +6,7 @@ public class CharacterMovement : MonoBehaviour
     public float jumpForce = 5f;
     private Rigidbody rb;
     private bool isGrounded;
+    public Transform camtransform;
 
 
     void Start()
