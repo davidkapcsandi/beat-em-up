@@ -7,16 +7,80 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
 
+    public Animator playerAnimator;
+    private SpriteRenderer playerSprite;
+
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        SetupPlayer();
+    }
+
+    void SetupPlayer()
+    {
+         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
+        playerAnimator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
+
     }
 
     void Update()
     {
-        // Horizontal movement (left/right with 'A'/'D')
+
+        HandleMovement();
+        HandleAnimations();
+        HandleFlip();
+        
+     
+        // Jumping logic
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            Jump();
+        }
+    }
+    void HandleFlip()
+    {
+        if (rb.velocity.x < 0)
+        {
+            playerSprite.flipX = true;
+        }
+        else
+        {
+            playerSprite.flipX = false;
+
+        }
+        
+
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);  // Apply jump force only on Y-axis
+        isGrounded = false;
+    }
+
+    void HandleAnimations()
+    {
+        if(rb.velocity.x > 0)
+        {
+
+        playerAnimator.SetTrigger("Walk");
+
+        }
+        else
+        {
+             playerAnimator.SetTrigger("Idle");
+
+        }
+       
+
+
+    }
+
+    void HandleMovement()
+    {
+           // Horizontal movement (left/right with 'A'/'D')
         float horizontalMove = 0f;
         if (Input.GetKey(KeyCode.D))
         {
@@ -42,17 +106,7 @@ public class CharacterMovement : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalMove, 0, verticalMove);
         rb.velocity = new Vector3(moveDirection.x, rb.velocity.y, moveDirection.z);  // Keep the y-velocity for gravity/jumping
 
-        // Jumping logic
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            Jump();
-        }
-    }
 
-    void Jump()
-    {
-        rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);  // Apply jump force only on Y-axis
-        isGrounded = false;
     }
 
     private void OnCollisionEnter(Collision collision)
