@@ -30,15 +30,15 @@ public class EnemyAttack : MonoBehaviour
     }
     private void Attack()
     {
-        // Find all colliders in the trigger zone and deal damage to enemies
+        
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (var hitCollider in hitColliders)
         {
-            // Check if the collider is on the Enemy layer
+            
             if (hitCollider.CompareTag("Player"))
                 Debug.Log("Enemy Attack");
             {
-                // Call the TakeDamage function on the enemy
+                
                 PlayerHealth player = hitCollider.GetComponent<PlayerHealth>();
                 if (player != null)
                 {
