@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - CameraTrigger
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
