@@ -83,6 +83,25 @@ public class CharacterMovement : MonoBehaviour
 
         }
 
+
+    }
+    void KickCombat()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (debugCombat)
+            {
+                Debug.Log("Kick");
+
+            }
+            playerAnimator.SetTrigger("LightKick");
+
+        }
+        else
+        {
+            playerAnimator.ResetTrigger("LightKick");
+
+        }
     }
 
     void HandleAnimations()
