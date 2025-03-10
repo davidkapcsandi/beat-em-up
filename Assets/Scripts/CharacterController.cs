@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
     public float moveSpeed = 8f;
     public float jumpForce = 5f;
+    public bool debugCombat;
     private Rigidbody rb;
     private bool isGrounded;
 
@@ -18,7 +20,7 @@ public class CharacterMovement : MonoBehaviour
 
     void SetupPlayer()
     {
-         rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         playerAnimator = GetComponent<Animator>();
         playerSprite = GetComponent<SpriteRenderer>();
@@ -31,6 +33,7 @@ public class CharacterMovement : MonoBehaviour
         HandleMovement();
         HandleAnimations();
         HandleFlip();
+        HandleCombat();
         
      
         // Jumping logic
@@ -60,17 +63,40 @@ public class CharacterMovement : MonoBehaviour
         isGrounded = false;
     }
 
+    void HandleCombat()
+    {
+
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            if(debugCombat)
+            {
+                Debug.Log("Punch");
+
+            }
+            playerAnimator.SetTrigger("LightPunch");
+            
+        }
+        else
+        {
+            playerAnimator.ResetTrigger("LightPunch");
+
+        }
+
+    }
+
     void HandleAnimations()
     {
-        if(rb.velocity.x > 0)
+        if(rb.velocity.x > 0 | rb.velocity.x <0)
         {
 
-        playerAnimator.SetTrigger("Walk");
+        playerAnimator.SetBool("Walk",true);
+         playerAnimator.SetBool("Idle",true);
 
         }
         else
         {
-             playerAnimator.SetTrigger("Idle");
+         playerAnimator.SetBool("Walk", false);
+         playerAnimator.SetBool("Idle",true);
 
         }
        
