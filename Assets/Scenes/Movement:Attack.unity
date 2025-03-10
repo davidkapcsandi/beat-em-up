@@ -4789,7 +4789,7 @@ GameObject:
   - component: {fileID: 955640090}
   m_Layer: 0
   m_Name: AttackCollider
-  m_TagString: Player
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4839,10 +4839,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 955640087}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 326f617532ef74d55bf34b78d8cc4dd7, type: 3}
+  m_Script: {fileID: 11500000, guid: decf30c3998414afb8f939e11fef9d4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newTag: PlayerAttack
+  attackCooldown: 1
 --- !u!1 &957918875
 GameObject:
   m_ObjectHideFlags: 0
@@ -6029,9 +6029,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyBot
       objectReference: {fileID: 0}
+    - target: {fileID: 2165785628535627291, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2165785628535627291, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6490005809047567549, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.39
+      value: -47.54
       objectReference: {fileID: 0}
     - target: {fileID: 6490005809047567549, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6071,11 +6079,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8397363599848371487, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_Radius
-      value: 6.8
+      value: 11.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 8397363599848371487, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8397363599848371487, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_Center.x
-      value: -5.7
+      value: -1.37
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6086,7 +6098,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2165785628535627291, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1585328208}
+      addedObject: {fileID: 1585328213}
+    - targetCorrespondingSourceObject: {fileID: 2165785628535627291, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1585328214}
   m_SourcePrefab: {fileID: 100100000, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
 --- !u!1001 &1355029108
 PrefabInstance:
@@ -6868,9 +6883,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1552621986}
   - component: {fileID: 1552621987}
-  m_Layer: 0
+  - component: {fileID: 1552621988}
+  m_Layer: 3
   m_Name: NPCCollider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6885,7 +6901,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.0025654733, y: -0.99569607, z: -0.08819543, w: 0.028363034}
   m_LocalPosition: {x: -0.287695, y: 0.42332911, z: -0.4294566}
-  m_LocalScale: {x: 1.2155422, y: 1.2155417, z: 1.2155423}
+  m_LocalScale: {x: 0.7535511, y: 1.1546909, z: 0.68709546}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 67653094}
@@ -6911,12 +6927,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.23, y: 4.93, z: 4.99}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1552621988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552621985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b313e08bec7540c18d196f07bbc58e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
 --- !u!1 &1585328203 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2165785628535627291, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
   m_PrefabInstance: {fileID: 1342342484}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1585328208
+--- !u!114 &1585328213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6925,11 +6954,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1585328203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 008ff8762d642457c93a531910ec4827, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b313e08bec7540c18d196f07bbc58e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColour: {r: 0, g: 0, b: 0, a: 0}
-  npcMaxHealth: 2
+  health: 10
+--- !u!114 &1585328214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585328203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33002bfa188114ccf918ec6c7af3a858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1589903549
 GameObject:
   m_ObjectHideFlags: 0
