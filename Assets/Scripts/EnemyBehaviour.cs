@@ -6,7 +6,7 @@ public class EnemyBehaviour : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color hurtColour = Color.red;
-    private Color defaultColour;
+    public Color defaultColour;
 
     private float npcHealth;
     public float npcMaxHealth = 2;
@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
         SetupHealth();
         
         //Set Default Colour
-        defaultColour = spriteRenderer.color;
+      
     }
 
     void SetupHealth()
@@ -30,19 +30,33 @@ public class EnemyBehaviour : MonoBehaviour
     {
         
     }
+    public void Takedamage(int dmg)
+    {
+        npcHealth -= dmg;
+
+        if (npcHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "PlayerAttack")
         {
             Debug.Log("Ouch!");
-            spriteRenderer.color = hurtColour;
-            npcHealth --;
+            defaultColour = spriteRenderer.color;
+        }
+        else if (npcHealth <= 0)
+        {
+            Destroy(gameObject);
         }
         else
         {
-            spriteRenderer.color = defaultColour;
+            spriteRenderer.color = Color.black;
 
         }
     }
+    
 }
