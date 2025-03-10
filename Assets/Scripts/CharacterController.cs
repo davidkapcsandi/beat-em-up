@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
         HandleAnimations();
         HandleFlip();
         HandleCombat();
+        KickCombat();
         
      
         // Jumping logic
