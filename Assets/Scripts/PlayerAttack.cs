@@ -4,14 +4,23 @@ public class PlayerAttack : MonoBehaviour
 {
     public float attackCooldown = 1f;  // Time between attacks (in seconds)
     private float lastAttackTime = 0f; // Time of last attack
+    private int damageMeter;
 
     private void Update()
     {
         // Detect R key press
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= lastAttackTime + attackCooldown)
         {
+            damageMeter = 1;
             Attack();
             lastAttackTime = Time.time;  // Update the last attack time
+        }
+        else if (Input.GetKeyDown(KeyCode.F) && Time.time >= lastAttackTime + attackCooldown)
+        {
+            damageMeter = 2;
+            Attack();
+            lastAttackTime = Time.time;
+
         }
     }
 
@@ -28,7 +37,7 @@ public class PlayerAttack : MonoBehaviour
                 TestEnemy enemy = hitCollider.GetComponent<TestEnemy>();
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(1);  // Deal 1 damage
+                    enemy.TakeDamage(damageMeter);  // Deal 1 damage
                 }
             }
         }
