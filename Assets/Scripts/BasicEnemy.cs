@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
+
+
 public enum BotState
 {
     Patrol,
@@ -42,11 +44,10 @@ public class BasicEnemy : MonoBehaviour
             if (currIndex >= waypoints.Length)
                 currIndex = 0;
 
-            agent.SetDestination(waypoints[currIndex].position);
         }
     }
 
-    private void ChasePlayer()
+    public void ChasePlayer()
     {
         if (player != null)
         {
