@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6070,7 +6070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5695654471484443884, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_Radius
-      value: 19.87
+      value: 7.98
       objectReference: {fileID: 0}
     - target: {fileID: 5695654471484443884, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_Enabled
@@ -6078,7 +6078,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5695654471484443884, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_BaseOffset
-      value: 0
+      value: 1.55
       objectReference: {fileID: 0}
     - target: {fileID: 5695654471484443884, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: m_AngularSpeed
@@ -7677,7 +7677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1bc11e9d9fe47199328d3d178975b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 1
+  attackCooldown: 3
+  enemyAnimator: {fileID: 1585328219}
 --- !u!65 &1658620311
 BoxCollider:
   m_ObjectHideFlags: 0
