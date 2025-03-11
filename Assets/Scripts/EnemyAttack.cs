@@ -1,10 +1,9 @@
-
 using System.Collections;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    public float attackCooldown = 1f;
+    public float attackCooldown = 3f; // 3-second delay between attacks
     private float lastAttackTime = 0f;
     public Animator enemyAnimator;
 
@@ -19,9 +18,9 @@ public class EnemyAttack : MonoBehaviour
             {
                 if (hitCollider.CompareTag("Player"))
                 {
+                    Debug.Log("Enemy sees the player and is ready to attack!");
                     Attack();
-                    enemyAnimator.SetBool("LightPunch", true);
-                    lastAttackTime = Time.time;
+                    lastAttackTime = Time.time; // Update last attack time
                     break;
                 }
             }
@@ -30,34 +29,37 @@ public class EnemyAttack : MonoBehaviour
 
     private void Attack()
     {
-        bool attacked = false; // Ensures attack animation is only reset once
+        Debug.Log("Enemy is attacking!");
 
+        // Set the boolean to true to trigger the LightPunch animation
+        enemyAnimator.SetBool("LightPunch", true);
+
+        // Check if the player is in range to apply damage
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Player"))
             {
-                Debug.Log("Enemy Attack");
-
                 PlayerHealth player = hitCollider.GetComponent<PlayerHealth>();
                 if (player != null)
                 {
-                    player.PlayerDamage(1); // Deal 1 damage
+                    player.PlayerDamage(1); // Apply damage to the player
                 }
-
-                attacked = true; // Track if attack occurred
             }
         }
 
-        if (attacked)
-        {
-            StartCoroutine(ResetAttackAnimation());
-        }
+        // Start a coroutine to reset the animation after it finishes
+        StartCoroutine(ResetAttackAnimation());
     }
 
     private IEnumerator ResetAttackAnimation()
     {
-        yield return new WaitForSeconds(2f); // Adjust timing based on animation length
+        // Wait for the duration of the animation (you can adjust this time to fit your animation)
+        yield return new WaitForSeconds(1f); // Adjust this time based on your animation length
+
+        // Reset the boolean to false to stop the attack animation
         enemyAnimator.SetBool("LightPunch", false);
+
+        Debug.Log("Attack animation reset!");
     }
 }
