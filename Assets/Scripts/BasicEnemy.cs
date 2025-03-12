@@ -15,11 +15,12 @@ public class BasicEnemy : MonoBehaviour
     public UnityEvent<BotState> StateChanged;
     public NavMeshAgent agent;
     public Transform[] waypoints;
-    private Transform player; 
+    private Transform player;
     private int currIndex = -1;
     private BotState botState = BotState.Patrol;
     public Animator enemyAnimator;
     private Rigidbody rb;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
@@ -32,6 +33,7 @@ public class BasicEnemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         enemyAnimator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
 
@@ -63,13 +65,21 @@ public class BasicEnemy : MonoBehaviour
 
     public void ChasePlayer()
     {
-        while (player != null)
+        if (player != null)
         {
             agent.SetDestination(player.position);  // Always update the target position
             enemyAnimator.SetBool("Walk", true);
+            if(player.transform.position.x >= transform.position.x)
+            {
+                spriteRenderer.flipX = false;
+            }
+                else
+            {
+                spriteRenderer.flipX = true;
+            }
         }
         
-        
+        else
         {
             enemyAnimator.SetBool("Walk", false);
             enemyAnimator.SetBool("Idle" ,true);
@@ -86,7 +96,7 @@ public class BasicEnemy : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+   /* private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -96,6 +106,7 @@ public class BasicEnemy : MonoBehaviour
             player = null;
         }
     }
+   */
   
    
 }
