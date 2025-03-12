@@ -26,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player Health: " + health);
         spriteRenderer.color = hurtColour;
         StartCoroutine(ResetColor());
-
+        
         if (health <= 0)
         {
             Die();

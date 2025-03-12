@@ -12,11 +12,6 @@ public class EnemyAttack : MonoBehaviour
 
     private void Update()
     {
-        // Check if the enemy is stunned. If yes, don't attack.
-        if (damageTakenScript.isStunned)
-        {
-            return; // Exit the Update method early if the enemy is stunned
-        }
 
         // If enough time has passed since the last attack, check if the player is in range
         if (Time.time >= lastAttackTime + attackCooldown)
