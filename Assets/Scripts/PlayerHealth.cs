@@ -1,4 +1,4 @@
-
+using UnityEngine.UI;
 using System.Collections;
 using UnityEngine;
 
@@ -7,9 +7,12 @@ public class PlayerHealth : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Color hurtColour = Color.red;
     public Color defaultColour;
-    public int health = 10;
+    public Slider healthBar;
+    public float maxHealth = 100;
+    private float health;
     private void Start()
     {
+        health = maxHealth;
         spriteRenderer = transform.root.GetComponent<SpriteRenderer>();
         if (spriteRenderer != null)
         {
@@ -19,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerDamage(int damage)
     {
         health -= damage;
+        healthBar.value = health / maxHealth;
         Debug.Log("Player Health: " + health);
         spriteRenderer.color = hurtColour;
         StartCoroutine(ResetColor());
