@@ -318,7 +318,7 @@ GameObject:
   - component: {fileID: 2936664775715307466}
   - component: {fileID: 2936664775715307467}
   m_Layer: 5
-  m_Name: Frame 9
+  m_Name: Ingame Menu idea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
