@@ -18,14 +18,29 @@ public class BasicEnemy : MonoBehaviour
     private Transform player; 
     private int currIndex = -1;
     private BotState botState = BotState.Patrol;
+    public Animator enemyAnimator;
+    private Rigidbody rb;
 
     private void Start()
     {
         StateChanged?.Invoke(botState);
+        SetupEnemy();
     }
+
+    void SetupEnemy ()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        enemyAnimator = GetComponent<Animator>();
+
+    }
+
+
 
     private void Update()
     {
+
+
         if (botState == BotState.Patrol)
         {
             Patrol();
@@ -43,7 +58,6 @@ public class BasicEnemy : MonoBehaviour
             currIndex++;
             if (currIndex >= waypoints.Length)
                 currIndex = 0;
-
         }
     }
 
@@ -52,6 +66,13 @@ public class BasicEnemy : MonoBehaviour
         if (player != null)
         {
             agent.SetDestination(player.position);  // Always update the target position
+            enemyAnimator.SetBool("Walk", true);
+        }
+        
+        else
+        {
+            enemyAnimator.SetBool("Walk", false);
+            enemyAnimator.SetBool("Idle" ,true);
         }
     }
 
@@ -75,4 +96,6 @@ public class BasicEnemy : MonoBehaviour
             player = null;
         }
     }
+  
+   
 }
