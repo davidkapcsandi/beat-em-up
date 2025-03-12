@@ -1,44 +1,9 @@
 fileFormatVersion: 2
-guid: 27586812bc6d9d544afc0c5296019881
+guid: 12d3a5798469d4964ad81a154ef9986e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Body
-    second: {fileID: 2100000, guid: bd5a2dc97bddbfb4bb14ebf097929d60, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Color.002
-    second: {fileID: 2100000, guid: 791e40436e747b0479b786842683105a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: cee58bd91e8130148974277c6d38fa06, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Light.001
-    second: {fileID: 2100000, guid: 4412c5b173700734eb29814b56c0a77d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Rail
-    second: {fileID: 2100000, guid: 6e207cb22198741418b87080e0a284c1, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Window
-    second: {fileID: 2100000, guid: a9833eba2e2be434f945106318b5e007, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wire
-    second: {fileID: 2100000, guid: 8ceb647306d12e14b9bf8e1bfa867797, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
