@@ -289,6 +289,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -332,6 +340,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -2616,6 +2640,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 9
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -2659,6 +2691,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -3033,6 +3081,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -3076,6 +3132,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -5196,15 +5268,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5f7d372e57fc28f4baab9ef31f75a4bc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 117.33
+      value: 13.82
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5f7d372e57fc28f4baab9ef31f75a4bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5f7d372e57fc28f4baab9ef31f75a4bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.97
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: -7552582706839291426, guid: 5f7d372e57fc28f4baab9ef31f75a4bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6485,6 +6557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650589513}
   - component: {fileID: 650589514}
+  - component: {fileID: 650589515}
   m_Layer: 0
   m_Name: AttackCollider
   m_TagString: Untagged
@@ -6528,6 +6601,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &650589515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650589512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6620d913777cddd4f8bd57e3a8dbd468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 877365241}
+  attackDamage: 0
+  attackCooldown: 2
 --- !u!1001 &654360691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7515,6 +7603,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -7558,6 +7654,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -10892,6 +11004,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 21
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -10935,6 +11055,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -11101,6 +11237,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Woods Trees 25
       objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
+      objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
@@ -11144,6 +11288,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -11862,15 +12022,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.60121
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.52
+      value: 1.71
       objectReference: {fileID: 0}
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.59
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11904,10 +12064,6 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 2076777994}
-    - target: {fileID: 8340066930458136859, guid: bcd4cc589f753417187999e34693e77c, type: 3}
-      propertyPath: maxHealth
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 8704381710153655062, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_Name
       value: Player
@@ -11928,6 +12084,14 @@ PrefabInstance:
     - target: {fileID: 1483735473587982, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_Name
       value: Woods Trees 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.70105743
+      objectReference: {fileID: 0}
+    - target: {fileID: 4204106919148890, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09229613
       objectReference: {fileID: 0}
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalScale.x
@@ -11972,6 +12136,22 @@ PrefabInstance:
     - target: {fileID: 4455360050216574, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.25915548
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6579046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4517005832111450, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.25915548
       objectReference: {fileID: 0}
     - target: {fileID: 114731576201511908, guid: 1280f518acfa540b19b9c940c0ea531a, type: 3}
       propertyPath: showLeaf
@@ -18413,6 +18593,46 @@ PrefabInstance:
     - target: {fileID: 1370526615014174, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
       propertyPath: m_Name
       value: Woods Trees 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003595039887686, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003595039887686, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4003595039887686, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344613988907922, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344613988907922, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344613988907922, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.08715578
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480923628860866, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.58964634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480923628860866, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.39027834
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480923628860866, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.58964634
+      objectReference: {fileID: 0}
+    - target: {fileID: 4480923628860866, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.39027834
       objectReference: {fileID: 0}
     - target: {fileID: 4738798808070842, guid: fb2304f44b9ad4094827bb850fe1c95e, type: 3}
       propertyPath: m_LocalScale.y
