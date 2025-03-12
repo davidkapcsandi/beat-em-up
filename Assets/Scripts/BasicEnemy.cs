@@ -53,7 +53,7 @@ public class BasicEnemy : MonoBehaviour
 
     private void Patrol()
     {
-        if (!agent.hasPath || agent.remainingDistance <= 0.1f)
+        if (!agent.hasPath || agent.remainingDistance <= 0.3f)
         {
             currIndex++;
             if (currIndex >= waypoints.Length)
@@ -63,13 +63,13 @@ public class BasicEnemy : MonoBehaviour
 
     public void ChasePlayer()
     {
-        if (player != null)
+        while (player != null)
         {
             agent.SetDestination(player.position);  // Always update the target position
             enemyAnimator.SetBool("Walk", true);
         }
         
-        else
+        
         {
             enemyAnimator.SetBool("Walk", false);
             enemyAnimator.SetBool("Idle" ,true);

@@ -34,7 +34,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.004974182, y: 0, z: 0, w: 0.99998766}
   m_LocalPosition: {x: -47.63, y: 1.79, z: -3.61}
-  m_LocalScale: {x: 0.81999993, y: 0.82, z: 0.81999993}
+  m_LocalScale: {x: 0.82008195, y: 0.820082, z: 0.82008195}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8740173813191937872}
@@ -376,6 +376,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e1bc11e9d9fe47199328d3d178975b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackCooldown: 2
+  attackCooldown: 1
   enemyAnimator: {fileID: 763543199870223389}
-  damageTakenScript: {fileID: 0}
+  damageTakenScript: {fileID: 6634437389753645906}
