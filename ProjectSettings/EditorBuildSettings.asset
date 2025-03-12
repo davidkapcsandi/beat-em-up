@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/ErrolLevelDesignunity.unity
+    guid: e49ce8ed1de2c4de6b6522d78b8bb215
   m_configObjects: {}

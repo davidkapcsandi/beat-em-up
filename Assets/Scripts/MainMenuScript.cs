@@ -4,7 +4,7 @@ using UnityEngine.UI; // For button UI
 
 public class MainMenuScript : MonoBehaviour
 {
-    public void Start()
+    public void StartPress()
     {
         SceneManager.LoadScene("ErrolLevelDesignunity");
     }

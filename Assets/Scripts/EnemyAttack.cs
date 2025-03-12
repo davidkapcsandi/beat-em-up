@@ -6,11 +6,19 @@ public class EnemyAttack : MonoBehaviour
     public float attackCooldown = 3f; // 3-second delay between attacks
     private float lastAttackTime = 0f;
     public Animator enemyAnimator;
+    public DamageTaken damageTakenScript; // Reference to the DamageTaken script
 
     private float attackRadius = 2f;
 
     private void Update()
     {
+        // Check if the enemy is stunned. If yes, don't attack.
+        if (damageTakenScript.isStunned)
+        {
+            return; // Exit the Update method early if the enemy is stunned
+        }
+
+        // If enough time has passed since the last attack, check if the player is in range
         if (Time.time >= lastAttackTime + attackCooldown)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
@@ -31,7 +39,7 @@ public class EnemyAttack : MonoBehaviour
     {
         Debug.Log("Enemy is attacking!");
 
-        // Set the boolean to true to trigger the LightPunch animation
+        // Trigger the LightPunch animation (set the boolean to true)
         enemyAnimator.SetBool("LightPunch", true);
 
         // Check if the player is in range to apply damage

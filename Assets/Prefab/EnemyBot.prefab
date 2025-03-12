@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33002bfa188114ccf918ec6c7af3a858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isStunned: 0
 --- !u!95 &763543199870223389
 Animator:
   serializedVersion: 5
@@ -377,3 +378,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 2
   enemyAnimator: {fileID: 763543199870223389}
+  damageTakenScript: {fileID: 0}
