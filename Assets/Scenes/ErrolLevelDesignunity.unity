@@ -6887,7 +6887,7 @@ GameObject:
   - component: {fileID: 650589514}
   m_Layer: 0
   m_Name: AttackCollider
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9494,7 +9494,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33002bfa188114ccf918ec6c7af3a858, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStunned: 0
 --- !u!114 &877365249
 MonoBehaviour:
   m_ObjectHideFlags: 0

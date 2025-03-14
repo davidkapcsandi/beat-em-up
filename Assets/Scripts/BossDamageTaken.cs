@@ -1,7 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageTaken : MonoBehaviour
+public class BossDamageTaken : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color hurtColor = Color.red;
@@ -20,7 +21,7 @@ public class DamageTaken : MonoBehaviour
     }
 
 
-    public void ColorChange()
+    public void ColorChangeBoss()
     {
         if (spriteRenderer != null)
         {
@@ -28,14 +29,14 @@ public class DamageTaken : MonoBehaviour
             spriteRenderer.color = hurtColor;
 
 
-            StartCoroutine(ResetColor());
+            StartCoroutine(ResetColorBoss());
 
-           
+
         }
     }
 
 
-    private IEnumerator ResetColor()
+    private IEnumerator ResetColorBoss()
     {
         yield return new WaitForSeconds(0.1f);
 
@@ -44,7 +45,6 @@ public class DamageTaken : MonoBehaviour
             spriteRenderer.color = originalColor;
 
         }
-       
+
     }
-   
 }
