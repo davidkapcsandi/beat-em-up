@@ -1,40 +1,68 @@
 using UnityEngine;
+using System.Collections;
 
 public class BossAttack : MonoBehaviour
 {
-    public Animator animator; // Reference to the boss's Animator
-    public int attackDamage = 20; // Damage dealt to the player
-    public float attackCooldown = 2f; // Cooldown between attacks
-    private GameObject targetPlayer; // Store the player reference
-    private float nextAttackTime = 0f;
+    public float attackCooldown = 3f; // 3-second delay between attacks
+    private float lastAttackTime = 0f;
+    public Animator bossAnimator;
+    public DamageTaken damageTakenScript; // Reference to the DamageTaken script
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player") && Time.time >= nextAttackTime)
-        {
-            targetPlayer = other.gameObject;
-            animator.SetTrigger("Attack"); // Start attack animation
-            nextAttackTime = Time.time + attackCooldown;
-        }
-    }
+    private float attackRadius = 4f;
 
-    // This function is called by an animation event at the hit frame
-    public void DealDamage()
+    private void Update()
     {
-        if (targetPlayer != null)
+
+        // If enough time has passed since the last attack, check if the player is in range
+        if (Time.time >= lastAttackTime + attackCooldown)
         {
-            PlayerHealth playerHealth = targetPlayer.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
+            foreach (var hitCollider in hitColliders)
             {
-                playerHealth.PlayerDamage(attackDamage);
+                if (hitCollider.CompareTag("Player"))
+                {
+                    Debug.Log("Enemy sees the player and is ready to attack!");
+                    Attack();
+                    lastAttackTime = Time.time; // Update last attack time
+                    break;
+                }
             }
         }
     }
-     private void OnTriggerExit(Collider other)
+
+    public void Attack()
     {
-        if (other.CompareTag("Player"))
+        Debug.Log("Enemy is attacking!");
+
+        // Trigger the LightPunch animation (set the boolean to true)
+        bossAnimator.SetBool("LightPunch", true);
+
+        // Check if the player is in range to apply damage
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
+        foreach (var hitCollider in hitColliders)
         {
-            targetPlayer = null; // Stop attacking when player leaves the collider
+            if (hitCollider.CompareTag("Player"))
+            {
+                PlayerHealth player = hitCollider.GetComponent<PlayerHealth>();
+                if (player != null)
+                {
+                    player.PlayerDamage(5); // Apply damage to the player
+                }
+            }
         }
+
+        // Start a coroutine to reset the animation after it finishes
+        StartCoroutine(ResetAttackAnimation());
+    }
+
+    private IEnumerator ResetAttackAnimation()
+    {
+        // Wait for the duration of the animation (you can adjust this time to fit your animation)
+        yield return new WaitForSeconds(1f); // Adjust this time based on your animation length
+
+        // Reset the boolean to false to stop the attack animation
+        bossAnimator.SetTrigger("Attack");
+
+        Debug.Log("Attack animation reset!");
     }
 }

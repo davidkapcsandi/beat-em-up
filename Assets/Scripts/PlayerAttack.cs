@@ -40,6 +40,15 @@ public class PlayerAttack : MonoBehaviour
                     enemy.TakeDamage(damageMeter);  // Deal 1 damage
                 }
             }
+            else if(hitCollider.CompareTag("Boss"))
+                {
+                BossHealth boss = hitCollider.GetComponent<BossHealth>();
+                if (boss != null)
+                {
+                    boss.TakeDamage(damageMeter);
+                }    
+
+                 }
         }
     }
 }
