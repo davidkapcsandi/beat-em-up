@@ -130,7 +130,8 @@ public class CharacterMovement : MonoBehaviour
            // Horizontal movement (left/right with 'A'/'D')
         float horizontalMove = 0f;
         if (Input.GetKey(KeyCode.D))
-        {
+        {playerAnimator.SetBool("Walk",true);
+
             horizontalMove = moveSpeed;
         }
         if (Input.GetKey(KeyCode.A))

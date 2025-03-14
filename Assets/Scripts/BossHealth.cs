@@ -21,7 +21,7 @@ public class BossHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        Debug.Log("Enemy health: " + health);
+        Debug.Log("Boss health: " + health);
         spriteRenderer.color = hurtColour;
         StartCoroutine(ResetColor());
         bossAnimator.SetTrigger("GetHit");

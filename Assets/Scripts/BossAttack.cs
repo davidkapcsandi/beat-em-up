@@ -8,7 +8,7 @@ public class BossAttack : MonoBehaviour
     public Animator bossAnimator;
     public DamageTaken damageTakenScript; // Reference to the DamageTaken script
 
-    private float attackRadius = 4f;
+    private float attackRadius = 2f;
 
     private void Update()
     {
@@ -22,7 +22,7 @@ public class BossAttack : MonoBehaviour
                 if (hitCollider.CompareTag("Player"))
                 {
                     Debug.Log("Enemy sees the player and is ready to attack!");
-                    Attack();
+                    BossAttacked();
                     lastAttackTime = Time.time; // Update last attack time
                     break;
                 }
@@ -30,12 +30,12 @@ public class BossAttack : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void BossAttacked()
     {
         Debug.Log("Enemy is attacking!");
 
         // Trigger the LightPunch animation (set the boolean to true)
-        bossAnimator.SetBool("LightPunch", true);
+        bossAnimator.SetTrigger("Attack");
 
         // Check if the player is in range to apply damage
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
@@ -51,18 +51,6 @@ public class BossAttack : MonoBehaviour
             }
         }
 
-        // Start a coroutine to reset the animation after it finishes
-        StartCoroutine(ResetAttackAnimation());
     }
 
-    private IEnumerator ResetAttackAnimation()
-    {
-        // Wait for the duration of the animation (you can adjust this time to fit your animation)
-        yield return new WaitForSeconds(1f); // Adjust this time based on your animation length
-
-        // Reset the boolean to false to stop the attack animation
-        bossAnimator.SetTrigger("Attack");
-
-        Debug.Log("Attack animation reset!");
-    }
 }
