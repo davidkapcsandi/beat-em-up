@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthBar;
     public float maxHealth = 100;
     private float health;
+    private DamageTextSpawner damageTextSpawner;
+
     private void Start()
     {
         health = maxHealth;
@@ -19,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
             defaultColour = spriteRenderer.color;
         }
     }
+
     public void PlayerDamage(int damage)
     {
         health -= damage;
@@ -26,7 +29,11 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player Health: " + health);
         spriteRenderer.color = hurtColour;
         StartCoroutine(ResetColor());
-        
+        if(damageTextSpawner)
+        {
+            damageTextSpawner.ShowDamage(damage, transform.position + Vector3.up * 1.5f);
+        }
+
         if (health <= 0)
         {
             Die();
@@ -36,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
             spriteRenderer.color = hurtColour;
         }
     }
+
     private IEnumerator ResetColor()
     {
         yield return new WaitForSeconds(0.1f);  // Wait for 0.1 seconds (adjustable)
@@ -52,8 +60,5 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("You died!");
         // Destroy the main (root) object, not just this object
         Destroy(transform.root.gameObject);
-
     }
-
-
 }

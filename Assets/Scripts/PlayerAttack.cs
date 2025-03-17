@@ -4,7 +4,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public float attackCooldown = 1f;  // Time between attacks (in seconds)
     private float lastAttackTime = 0f; // Time of last attack
-    private int damageMeter;
+    public int damageMeter;
 
     private void Update()
     {
@@ -41,14 +41,13 @@ public class PlayerAttack : MonoBehaviour
                 }
             }
             else if(hitCollider.CompareTag("Boss"))
-                {
+            {
                 BossHealth boss = hitCollider.GetComponent<BossHealth>();
                 if (boss != null)
                 {
                     boss.TakeDamage(damageMeter);
                 }    
-
-                 }
+            }
         }
     }
 }

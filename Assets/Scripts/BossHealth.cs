@@ -1,59 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class BossHealth : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private Color hurtColour = Color.red;
-    public Color defaultColour;
     public Animator bossAnimator;
     public int health = 10;
-    private void Start()
-    {
-        spriteRenderer = transform.root.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
-        {
-            defaultColour = spriteRenderer.color;
-        }
+    private bool isDead = false; // Prevent multiple deaths
 
-    }
     public void TakeDamage(int damage)
     {
+        if (isDead) return; // Ignore damage if already dead
+
         health -= damage;
-        Debug.Log("Boss health: " + health);
-        spriteRenderer.color = hurtColour;
-        StartCoroutine(ResetColor());
-        bossAnimator.SetTrigger("GetHit");
+        
 
+        if (damage > 0) // If still alive, trigger "GetHit"
+        {
+            health -= damage;
+            Debug.Log("Boss health: " + health);
+           bossAnimator.SetTrigger("GetHit");
+
+        
         if (health <= 0)
-        {
+            {
             Die();
-           
-        }
-        else
-        {
-            spriteRenderer.color = hurtColour;
-        }
-    }
-    private IEnumerator ResetColor()
-    {
-        yield return new WaitForSeconds(0.1f);  // Wait for 0.1 seconds (adjustable)
-
-        if (spriteRenderer != null)
-        {
-            // Reset the color back to the original color
-            spriteRenderer.color = defaultColour;
+            }
         }
     }
 
     private void Die()
     {
-        Debug.Log("Enemy died!");
-        bossAnimator.SetTrigger("Death");
-        // Destroy the main (root) object, not just this object
-        
+        if (isDead) return; // Prevent multiple death calls
 
+        isDead = true; // Mark as dead
+        Debug.Log("Boss died!");
+        bossAnimator.SetTrigger("Death"); // Trigger death animation
+
+        // Delay destruction to allow death animation to play
+        StartCoroutine(DestroyAfterDeath());
     }
-    
+
+    private IEnumerator DestroyAfterDeath()
+    {
+        // Wait for death animation to play
+        yield return new WaitForSeconds(2.5f); // Adjust this based on animation length
+
+        Destroy(gameObject); // Destroy the boss after the death animation
+    }
 }

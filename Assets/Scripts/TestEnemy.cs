@@ -1,12 +1,14 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class TestEnemy : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     private Color hurtColour = Color.red;
     public Color defaultColour;
-    public int health = 10;
+    public float health = 10;
+    private DamageTextSpawner damageTextSpawner;
+
     private void Start()
     {
         spriteRenderer = transform.root.GetComponent<SpriteRenderer>();
@@ -15,11 +17,19 @@ public class TestEnemy : MonoBehaviour
             defaultColour = spriteRenderer.color;
         }
 
+        // Find DamageTextSpawner in the scene
+        damageTextSpawner = FindObjectOfType<DamageTextSpawner>();
+        if (damageTextSpawner == null)
+        {
+            Debug.LogError("DamageTextSpawner not found in the scene!");
+        }
     }
-    public void TakeDamage(int damage)
+
+    public void TakeDamage(float damageMeter)
     {
-        health -= damage;
+        health -= damageMeter;
         Debug.Log("Enemy health: " + health);
+
         spriteRenderer.color = hurtColour;
         StartCoroutine(ResetColor());
 
@@ -27,18 +37,13 @@ public class TestEnemy : MonoBehaviour
         {
             Die();
         }
-        else
-        {
-            spriteRenderer.color = hurtColour;
-        }
     }
+
     private IEnumerator ResetColor()
     {
-        yield return new WaitForSeconds(0.1f);  // Wait for 0.1 seconds (adjustable)
-
+        yield return new WaitForSeconds(0.1f);
         if (spriteRenderer != null)
         {
-            // Reset the color back to the original color
             spriteRenderer.color = defaultColour;
         }
     }
@@ -46,8 +51,6 @@ public class TestEnemy : MonoBehaviour
     private void Die()
     {
         Debug.Log("Enemy died!");
-        // Destroy the main (root) object, not just this object
         Destroy(transform.root.gameObject);
-
     }
 }

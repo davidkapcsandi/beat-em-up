@@ -3,54 +3,83 @@ using System.Collections;
 
 public class BossAttack : MonoBehaviour
 {
-    public float attackCooldown = 3f; // 3-second delay between attacks
+    public float attackCooldown = 3f;
     private float lastAttackTime = 0f;
     public Animator bossAnimator;
-    public DamageTaken damageTakenScript; // Reference to the DamageTaken script
+    private Transform player;
+    private bool playerInRange = false;
+    private bool isAttacking = false;
 
-    private float attackRadius = 2f;
-
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-
-        // If enough time has passed since the last attack, check if the player is in range
-        if (Time.time >= lastAttackTime + attackCooldown)
+        if (other.CompareTag("Player"))
         {
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
-            foreach (var hitCollider in hitColliders)
+            player = other.transform;
+            playerInRange = true;
+            Debug.Log("Player entered range.");
+            
+            if (!isAttacking)
             {
-                if (hitCollider.CompareTag("Player"))
-                {
-                    Debug.Log("Enemy sees the player and is ready to attack!");
-                    BossAttacked();
-                    lastAttackTime = Time.time; // Update last attack time
-                    break;
-                }
+                StartCoroutine(AttackRoutine());
             }
         }
     }
 
-    public void BossAttacked()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("Enemy is attacking!");
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            Debug.Log("Player left range.");
+        }
+    }
 
-        // Trigger the LightPunch animation (set the boolean to true)
+    private IEnumerator AttackRoutine()
+    {
+        isAttacking = true;
+
+        while (playerInRange)
+        {
+            if (Time.time >= lastAttackTime + attackCooldown)
+            {
+                BossAttacked();
+                lastAttackTime = Time.time;
+                
+                yield return new WaitForSeconds(attackCooldown); // Wait before next attack
+            }
+            yield return null;
+        }
+
+        isAttacking = false;
+    }
+
+    private void BossAttacked()
+    {
         bossAnimator.SetTrigger("Attack");
 
-        // Check if the player is in range to apply damage
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, attackRadius);
-        foreach (var hitCollider in hitColliders)
-        {
-            if (hitCollider.CompareTag("Player"))
-            {
-                PlayerHealth player = hitCollider.GetComponent<PlayerHealth>();
-                if (player != null)
-                {
-                    player.PlayerDamage(5); // Apply damage to the player
-                }
-            }
-        }
+        StartCoroutine(ApplyDamageAfterDelay(0.5f));
 
+        // ✅ **Reset Trigger After Short Delay**
+        StartCoroutine(ResetAttackTrigger());
     }
 
+    private IEnumerator ApplyDamageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (player != null && playerInRange)
+        {
+            PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.PlayerDamage(5);
+            }
+        }
+    }
+
+    private IEnumerator ResetAttackTrigger()
+    {
+        yield return new WaitForSeconds(0.1f); // Small delay before resetting
+        bossAnimator.ResetTrigger("Attack"); // ✅ Prevents animation getting stuck
+    }
 }
