@@ -22,7 +22,7 @@ private float yPos;
 
     void Start()
     {
-        offsetPosition = new Vector3 (0,2,-15);
+        offsetPosition = new Vector3 (0,2,-10);
         
     }
 
