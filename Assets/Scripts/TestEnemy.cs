@@ -38,12 +38,15 @@ public class TestEnemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Die();
+            // Die();
+            Destroy(gameObject);
         }
     }
+}
 
-    void Die()
+    /* void Die()
     {
         Destroy(gameObject);
     }
 }
+*/
