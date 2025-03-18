@@ -1,37 +1,40 @@
 using UnityEngine;
-using System.Collections;
 
 public class TestEnemy : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    private Color hurtColour = Color.red;
-    public Color defaultColour;
-    public float health = 10;
-    private DamageTextSpawner damageTextSpawner;
+    public int health = 100;
+    public GameObject floatingTextPrefab; // Assign in Inspector!
 
     private void Start()
     {
-        spriteRenderer = transform.root.GetComponent<SpriteRenderer>();
-        if (spriteRenderer != null)
+        if (floatingTextPrefab == null)
         {
-            defaultColour = spriteRenderer.color;
-        }
-
-        // Find DamageTextSpawner in the scene
-        damageTextSpawner = FindObjectOfType<DamageTextSpawner>();
-        if (damageTextSpawner == null)
-        {
-            Debug.LogError("DamageTextSpawner not found in the scene!");
+            Debug.LogError("🚨 FloatingDamageText prefab is STILL missing from " + gameObject.name);
         }
     }
 
-    public void TakeDamage(float damageMeter)
+    public void TakeDamage(int damage)
     {
-        health -= damageMeter;
-        Debug.Log("Enemy health: " + health);
+        health -= damage;
 
-        spriteRenderer.color = hurtColour;
-        StartCoroutine(ResetColor());
+        if (floatingTextPrefab != null)
+        {
+            GameObject damageTextInstance = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
+            FloatingText floatingText = damageTextInstance.GetComponent<FloatingText>();
+
+            if (floatingText != null)
+            {
+                floatingText.SetText(damage);
+            }
+            else
+            {
+                Debug.LogError("FloatingText component is missing on prefab!");
+            }
+        }
+        else
+        {
+            Debug.LogError("FloatingDamageText prefab is NOT assigned in the Inspector!");
+        }
 
         if (health <= 0)
         {
@@ -39,18 +42,8 @@ public class TestEnemy : MonoBehaviour
         }
     }
 
-    private IEnumerator ResetColor()
+    void Die()
     {
-        yield return new WaitForSeconds(0.1f);
-        if (spriteRenderer != null)
-        {
-            spriteRenderer.color = defaultColour;
-        }
-    }
-
-    private void Die()
-    {
-        Debug.Log("Enemy died!");
-        Destroy(transform.root.gameObject);
+        Destroy(gameObject);
     }
 }

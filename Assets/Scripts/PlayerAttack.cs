@@ -20,27 +20,25 @@ public class PlayerAttack : MonoBehaviour
             damageMeter = 2;
             Attack();
             lastAttackTime = Time.time;
-
         }
     }
 
     private void Attack()
     {
         // Find all colliders in the trigger zone and deal damage to enemies
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f); // You can adjust the radius
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 2f); // Adjust radius if needed
         foreach (var hitCollider in hitColliders)
         {
-            // Check if the collider is on the Enemy layer
+            // Check if the collider is an Enemy
             if (hitCollider.CompareTag("Enemy"))
             {
-                // Call the TakeDamage function on the enemy
-                TestEnemy enemy = hitCollider.GetComponent<TestEnemy>();
+                TestEnemy enemy = hitCollider.GetComponent<TestEnemy>(); 
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damageMeter);  // Deal 1 damage
+                    enemy.TakeDamage(damageMeter);
                 }
             }
-            else if(hitCollider.CompareTag("Boss"))
+            else if (hitCollider.CompareTag("Boss"))
             {
                 BossHealth boss = hitCollider.GetComponent<BossHealth>();
                 if (boss != null)
