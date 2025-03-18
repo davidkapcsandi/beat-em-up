@@ -4,10 +4,10 @@ using System.Collections;
 public class BossHealth : MonoBehaviour
 {
     public Animator bossAnimator;
-    public int health = 10;
+    public float health = 10;
     private bool isDead = false; // Prevent multiple deaths
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         if (isDead) return; // Ignore damage if already dead
 

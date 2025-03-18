@@ -2855,10 +2855,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1024297919015840209, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
-      propertyPath: floatingTextPrefab
-      value: 
-      objectReference: {fileID: 8607942284440622608, guid: 7f554926332efe1449ba65d04819ab0b, type: 3}
     - target: {fileID: 1799613301438111989, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
@@ -2907,10 +2903,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7951317007156794020, guid: ab03aab95fa34554ba2bcbf04eaffe3b, type: 3}
-      propertyPath: floatingTextPrefab
-      value: 
-      objectReference: {fileID: 8607942284440622608, guid: 7f554926332efe1449ba65d04819ab0b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10943,7 +10935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -54.02
+      value: -54.14
       objectReference: {fileID: 0}
     - target: {fileID: 2759740694808181178, guid: bcd4cc589f753417187999e34693e77c, type: 3}
       propertyPath: m_LocalPosition.y

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -375,6 +375,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70638243}
   m_CullTransparentMesh: 1
+--- !u!1 &590688963 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6224985471169233576, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
+  m_PrefabInstance: {fileID: 730019459}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &730019459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 6224985471169233590, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1934145084}
     - target: {fileID: 6224985471169233590, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -513,7 +518,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6224985471169233591, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1667799262}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6224985471169233576, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1934145084}
   m_SourcePrefab: {fileID: 100100000, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
 --- !u!1001 &1038381261
 PrefabInstance:
@@ -666,6 +674,10 @@ PrefabInstance:
     - target: {fileID: 6224985471169233576, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
       propertyPath: m_Name
       value: Button 4 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6224985471169233576, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6224985471169233590, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1067,6 +1079,7 @@ GameObject:
   - component: {fileID: 1528869427}
   - component: {fileID: 1528869426}
   - component: {fileID: 1528869430}
+  - component: {fileID: 1528869431}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1149,11 +1162,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1721707352}
   - {fileID: 32804136}
   - {fileID: 1772466425}
   - {fileID: 1345673815}
   - {fileID: 1934145080}
-  - {fileID: 1721707352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1195,6 +1208,18 @@ VideoPlayer:
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
+--- !u!114 &1528869431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528869425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7b6b560244245ef94ec74df5fea5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1667799261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1570,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6224985471169233591, guid: 6b2e2ed1c291f4248bab3a8164b91766, type: 3}
   m_PrefabInstance: {fileID: 730019459}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1934145084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 590688963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d7b6b560244245ef94ec74df5fea5c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

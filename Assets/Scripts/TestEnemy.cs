@@ -1,52 +1,48 @@
 using UnityEngine;
+using System.Collections;
 
 public class TestEnemy : MonoBehaviour
 {
-    public int health = 100;
-    public GameObject floatingTextPrefab; // Assign in Inspector!
+    public Animator EnemyAnimator;
+    public float health = 10;
+    private bool isDead = false; // Prevent multiple deaths
 
-    private void Start()
+    public void TakeDamage(float damage)
     {
-        if (floatingTextPrefab == null)
-        {
-            Debug.LogError("🚨 FloatingDamageText prefab is STILL missing from " + gameObject.name);
-        }
-    }
+        if (isDead) return; // Ignore damage if already dead
 
-    public void TakeDamage(int damage)
-    {
         health -= damage;
+        
 
-        if (floatingTextPrefab != null)
+        if (damage > 0) // If still alive, trigger "GetHit"
         {
-            GameObject damageTextInstance = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity);
-            FloatingText floatingText = damageTextInstance.GetComponent<FloatingText>();
+            health -= damage;
+            Debug.Log("Enemy: " + health);
 
-            if (floatingText != null)
-            {
-                floatingText.SetText(damage);
-            }
-            else
-            {
-                Debug.LogError("FloatingText component is missing on prefab!");
-            }
-        }
-        else
-        {
-            Debug.LogError("FloatingDamageText prefab is NOT assigned in the Inspector!");
-        }
-
+        
         if (health <= 0)
-        {
-            // Die();
-            Destroy(gameObject);
+            {
+            Die();
+            }
         }
     }
-}
 
-    /* void Die()
+    private void Die()
     {
-        Destroy(gameObject);
+        if (isDead) return; // Prevent multiple death calls
+
+        isDead = true; // Mark as dead
+        Debug.Log("Boss died!");
+
+        // Delay destruction to allow death animation to play
+        StartCoroutine(DestroyAfterDeath());
+    }
+
+    private IEnumerator DestroyAfterDeath()
+    {
+        // Wait for death animation to play
+        yield return new WaitForSeconds(2.5f); // Adjust this based on animation length
+
+        Destroy(gameObject); // Destroy the boss after the death animation
     }
 }
-*/

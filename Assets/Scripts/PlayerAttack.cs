@@ -4,7 +4,7 @@ public class PlayerAttack : MonoBehaviour
 {
     public float attackCooldown = 1f;  // Time between attacks (in seconds)
     private float lastAttackTime = 0f; // Time of last attack
-    public int damageMeter;
+    public float damageMeter;
 
     private void Update()
     {
@@ -36,6 +36,7 @@ public class PlayerAttack : MonoBehaviour
                 if (enemy != null)
                 {
                     enemy.TakeDamage(damageMeter);
+                    Debug.Log ("Return damage");
                 }
             }
             else if (hitCollider.CompareTag("Boss"))
